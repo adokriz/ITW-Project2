@@ -229,6 +229,71 @@ section p {
     display: block;
 }
 
+.container {
+    display: flex;
+    width: 65%;
+    height: 50%;
+    background-color: lightgrey;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.column{
+    width: 100%;
+}
+
+.container h3 {
+    font-size: 1em;
+    margin-left: 5%;
+    border-bottom: black 2px dotted;
+}
+
+#project-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#project-list img {
+    margin-right: 10px;
+}
+
+#project-list li {
+    margin: 20px 0;
+    display: flex;
+}
+
+#project-list li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#project-list li a:hover {
+    color: darkgray;
+    text-shadow: black 1px 1px 1px;
+}
+
+.focused {
+    background-color: white;
+    border-left: black 2px solid;
+    border-bottom: black 2px solid;
+    border-top: black 2px solid;
+}
+
+#description p {
+    margin-left: 10px;
+}
+
+#paragraphWrapper {
+    width: 80%;
+    height: 80%;
+    border: black 2px solid;
+    background-color: white;
+}
+
 
 /* Responsive design */
 
@@ -370,6 +435,24 @@ section p {
 
     .flexItemRow:hover img {
         width: unset;
+    }
+}
+
+/* Redefine design project section */
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 90%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    #project-list {
+        display: flex;
+        flex-direction: row;
+    }
+    #project-list a {
+        width: 1px;
     }
 
 }
