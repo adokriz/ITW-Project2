@@ -295,6 +295,49 @@ section p {
 }
 
 
+#moneys {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#moneys img {
+    width: 30%;
+    height: 100%;
+
+    position: absolute;
+    animation: fall 5s linear infinite; /
+}
+
+#moneys img:nth-child(1) {
+    left: 15%;
+    top: -50%;
+    animation-duration: 4s;
+}
+
+#moneys img:nth-child(2) {
+    left: 30%;
+    top: -60%;
+}
+
+#moneys img:nth-child(3) {
+    left: 50%;
+    top: -70%;
+    animation-duration: 4.5s;
+}
+
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(100vh); /* Fall until below the viewport */
+    }
+}
+
 /* Responsive design */
 
 /* Redefine navbar and site size for mobile*/
