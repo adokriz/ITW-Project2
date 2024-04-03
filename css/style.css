@@ -447,12 +447,64 @@ section p {
         flex-direction: column;
     }
 
+    .container h3 {
+        margin-left: 1%;
+    }
+
     #project-list {
         display: flex;
         flex-direction: row;
     }
-    #project-list a {
-        width: 1px;
+
+    #project-list li {
+        flex-grow: 1;
     }
 
+    #project-list img {
+       display: none;
+    }
+
+    #project-list li a {
+        font-size: 0;
+        width: 80px;
+        height: 85px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: black 2px solid;
+        border-radius: 50%;
+    }
+
+    #project-list li:nth-child(1) a{
+        background-image: url("../img/spaceX.png");
+    }
+
+    #project-list li:nth-child(2) a{
+        background-image: url("../img/tesla.png");
+    }
+
+    #project-list li:nth-child(3) a{
+        background-image: url("../img/thebc.png");
+    }
+
+    #project-list li:nth-child(4) a{
+        background-image: url("../img/neuralink-square-logo.png");
+    }
+
+    #project-list li:nth-child(5) a{
+        background-image: url("../img/openAi.png");
+    }
+
+    #project-list li a:hover,
+    .focused {
+        box-shadow: white 0 0 50px;
+    }
+
+    #description {
+        height: 100%;
+    }
+
+    #paragraphWrapper {
+        margin: auto;
+    }
 }
