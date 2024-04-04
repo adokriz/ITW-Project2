@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to handle smooth scrolling with offset
+
+    // Known issue: This problem when change resolution from desktop to mobile need to refresh the page
+
+    // Enable offset for smooth scrolling on mobile devices
+    if (window.innerWidth < 767) {
     function smoothScrollWithOffset(target, offset) {
         const element = document.querySelector(target);
         const elementPosition = element.offsetTop - offset;
@@ -9,9 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     }
-
-    // Add event listeners to the navigation links
-    if (window.innerWidth < 767) {
         console.log('Viewport width is below 768px');
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
