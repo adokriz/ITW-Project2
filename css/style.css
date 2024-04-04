@@ -314,25 +314,27 @@ section p {
     transition: box-shadow 0.5s ease;
 }
 
-.referenceBlock:hover {
-    box-shadow: black 0 0 10px;
-}
+@media only screen and (min-width: 768px) {
+    .referenceBlock:hover {
+        box-shadow: black 0 0 10px;
+    }
 
-.referenceBlock:hover img {
-    width: 100%;
-    height: 100%;
-}
+    .referenceBlock:hover img {
+        width: 100%;
+        height: 100%;
+    }
 
-.referenceBlock:hover p {
-    font-size: 1.2em;
-}
+    .referenceBlock:hover p {
+        font-size: 1.2em;
+    }
 
-.referenceBlock:hover h3 {
-    font-size: 1.4em;
-}
+    .referenceBlock:hover h3 {
+        font-size: 1.4em;
+    }
 
-.referenceBlock:nth-child(odd) {
-    flex-direction: row-reverse;
+    .referenceBlock:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
 }
 
 #referenceSectionContent::after {
@@ -644,4 +646,49 @@ section p {
     #paragraphWrapper {
         margin: auto;
     }
+}
+
+/* Redefine design reference section */
+
+@media only screen and (max-width: 767px) {
+    #referenceSection {
+        height: auto;
+    }
+
+    #referenceSection h1{
+        font-size: 5em;
+    }
+
+    #referenceSectionContent {
+        height: 100%;
+        width: 95%;
+        overflow: unset;
+    }
+
+    .referenceBlock {
+        height: 100%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .referenceBlock h3 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .referenceText {
+        width: 95%;
+    }
+
+    .referenceImg {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 5%;
+    }
+
+    #referenceSectionContent::after {
+        height: 100%;
+    }
+
 }
