@@ -36,8 +36,8 @@ nav {
     z-index: 100;
 }
 
-nav h2 {
-   display: none;
+nav #mobileRedirect {
+    display: none;
 }
 
 nav ul {
@@ -190,10 +190,10 @@ section p {
 }
 
 .flexItemRow{
-    width: 210px;
+    width: 220px;
+    min-height: 290px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     transition: width 0.5s ease;
 }
@@ -206,6 +206,8 @@ section p {
 }
 
 .flexItemsRow img {
+    width: 100%;
+    height: auto;
     border-bottom: 2px solid black;
 }
 
@@ -215,6 +217,7 @@ section p {
 
 .flexItemRow:hover {
     width: 350px;
+    height: 850px;
 }
 
 .flexItemRow:nth-child(odd):hover {
@@ -223,10 +226,6 @@ section p {
 
 .flexItemRow:nth-child(even):hover {
     box-shadow: blue 0 0 10px;
-}
-
-.flexItemRow:hover img {
-    width: 100%;
 }
 
 .flexItemRow:hover p {
@@ -354,7 +353,7 @@ section p {
     top: 0;
     left: 0;
     width: 100%;
-    height: 180%;
+    height: 130%;
     background-image: url("../img/36155.jpg");
     background-size: contain;
     background-attachment: fixed;
@@ -437,6 +436,10 @@ section p {
     #milionareSection h1 {
         font-size: 3.3em;
     }
+
+    #milionareSection {
+        height: 90vh;
+    }
 }
 
 /* End of bonus section */
@@ -447,7 +450,7 @@ section p {
         transform: translateY(-50px);
     }
     100% {
-        transform: translateY(100vh); /* Fall until below the viewport */
+        transform: translateY(100vh);
     }
 }
 
@@ -472,6 +475,11 @@ section p {
 
     body {
         flex-direction: column;
+    }
+
+    nav #mobileRedirect {
+        display: unset;
+        text-decoration: none;
     }
 
     nav h2{
@@ -544,12 +552,6 @@ section p {
     }
 }
 
-@media only screen and (max-width: 509px) {
-    #aboutSection {
-        background-position: 95% 15%;
-    }
-}
-
 /* Redefine design education section */
 
 @media only screen and (max-width: 767px) {
@@ -575,10 +577,11 @@ section p {
     .flexItemRow {
         width: 100%;
         margin-top: 15%;
-
     }
 
     .flexItemRow img {
+        width: 60%;
+        margin-top: 10px;
         border: none;
     }
 
@@ -590,8 +593,8 @@ section p {
         width: 100%;
     }
 
-    .flexItemRow:hover img {
-        width: unset;
+    .flexItemRow:hover {
+        height: unset;
     }
 }
 

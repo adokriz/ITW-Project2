@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Known issue: This problem when change resolution from desktop to mobile need to refresh the page
-
-    // Enable offset for smooth scrolling on mobile devices
-    if (window.innerWidth < 767) {
+    // Function to scroll smoothly to the target element with offset
     function smoothScrollWithOffset(target, offset) {
         const element = document.querySelector(target);
         const elementPosition = element.offsetTop - offset;
@@ -13,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     }
-        console.log('Viewport width is below 768px');
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                const navbarHeight = document.querySelector('#headerDiv').offsetHeight; // Get the height of your navbar
-                smoothScrollWithOffset(target, navbarHeight);
-            });
+    console.log('Viewport width is below 768px');
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            if (window.innerWidth >= 767) return
+            e.preventDefault();
+            const target = this.getAttribute('href');
+            const navbarHeight = document.querySelector('#headerDiv').offsetHeight; // Get the height of navbar
+            smoothScrollWithOffset(target, navbarHeight);
         });
-    }
+    });
 });

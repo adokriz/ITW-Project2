@@ -2,7 +2,7 @@ const projectList = document.getElementById('project-list');
 const descriptionColumn = document.getElementById('description');
 
 projectList.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default link behavior
+    event.preventDefault();
     const target = event.target;
     if (target.tagName === 'A') {
 
